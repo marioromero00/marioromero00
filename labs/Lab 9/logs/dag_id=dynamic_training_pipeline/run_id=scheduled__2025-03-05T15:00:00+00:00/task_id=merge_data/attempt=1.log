@@ -1,0 +1,16 @@
+[2025-06-12T01:45:45.003+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dynamic_training_pipeline.merge_data scheduled__2025-03-05T15:00:00+00:00 [queued]>
+[2025-06-12T01:45:45.011+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dynamic_training_pipeline.merge_data scheduled__2025-03-05T15:00:00+00:00 [queued]>
+[2025-06-12T01:45:45.012+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-12T01:45:45.029+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): merge_data> on 2025-03-05 15:00:00+00:00
+[2025-06-12T01:45:45.044+0000] {standard_task_runner.py:60} INFO - Started process 627 to run task
+[2025-06-12T01:45:45.047+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dynamic_training_pipeline', 'merge_data', 'scheduled__2025-03-05T15:00:00+00:00', '--job-id', '31', '--raw', '--subdir', 'DAGS_FOLDER/dag_dynamic.py', '--cfg-path', '/tmp/tmp07ucnzyb']
+[2025-06-12T01:45:45.052+0000] {standard_task_runner.py:88} INFO - Job 31: Subtask merge_data
+[2025-06-12T01:45:45.104+0000] {task_command.py:423} INFO - Running <TaskInstance: dynamic_training_pipeline.merge_data scheduled__2025-03-05T15:00:00+00:00 [running]> on host caffbd336f08
+[2025-06-12T01:45:45.217+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dynamic_training_pipeline' AIRFLOW_CTX_TASK_ID='merge_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-05T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-05T15:00:00+00:00'
+[2025-06-12T01:45:45.228+0000] {logging_mixin.py:188} INFO - Archivo no encontrado en raíz: /opt/***/data_1.csv
+[2025-06-12T01:45:45.231+0000] {logging_mixin.py:188} INFO - Archivo no encontrado en raíz: /opt/***/data_2.csv
+[2025-06-12T01:45:45.233+0000] {logging_mixin.py:188} INFO - No hay datos para concatenar.
+[2025-06-12T01:45:45.235+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-12T01:45:45.243+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=dynamic_training_pipeline, task_id=merge_data, execution_date=20250305T150000, start_date=20250612T014545, end_date=20250612T014545
+[2025-06-12T01:45:45.275+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-12T01:45:45.308+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

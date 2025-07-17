@@ -1,0 +1,19 @@
+[2025-06-12T01:02:54.747+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dynamic_training_pipeline.branching_logic manual__2025-06-12T01:02:52.793534+00:00 [queued]>
+[2025-06-12T01:02:54.749+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dynamic_training_pipeline.branching_logic manual__2025-06-12T01:02:52.793534+00:00 [queued]>
+[2025-06-12T01:02:54.749+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-12T01:02:54.753+0000] {taskinstance.py:2191} INFO - Executing <Task(BranchPythonOperator): branching_logic> on 2025-06-12 01:02:52.793534+00:00
+[2025-06-12T01:02:54.756+0000] {standard_task_runner.py:60} INFO - Started process 240 to run task
+[2025-06-12T01:02:54.758+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dynamic_training_pipeline', 'branching_logic', 'manual__2025-06-12T01:02:52.793534+00:00', '--job-id', '86', '--raw', '--subdir', 'DAGS_FOLDER/dag_dynamic.py', '--cfg-path', '/tmp/tmp9vrn0ewt']
+[2025-06-12T01:02:54.759+0000] {standard_task_runner.py:88} INFO - Job 86: Subtask branching_logic
+[2025-06-12T01:02:54.775+0000] {task_command.py:423} INFO - Running <TaskInstance: dynamic_training_pipeline.branching_logic manual__2025-06-12T01:02:52.793534+00:00 [running]> on host 27920052c294
+[2025-06-12T01:02:54.797+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dynamic_training_pipeline' AIRFLOW_CTX_TASK_ID='branching_logic' AIRFLOW_CTX_EXECUTION_DATE='2025-06-12T01:02:52.793534+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-12T01:02:52.793534+00:00'
+[2025-06-12T01:02:54.798+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.10/site-packages/***/utils/context.py:315 AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+[2025-06-12T01:02:54.798+0000] {logging_mixin.py:188} INFO - [branching_logic] Execution date: 2025-06-12 01:02:52.793534+00:00 | Cutoff: 2024-11-01 00:00:00+00:00
+[2025-06-12T01:02:54.799+0000] {logging_mixin.py:188} INFO - Elegido: download_data_1_and_2
+[2025-06-12T01:02:54.799+0000] {python.py:201} INFO - Done. Returned value was: download_data_1_and_2
+[2025-06-12T01:02:54.799+0000] {branch.py:35} INFO - Branch into download_data_1_and_2
+[2025-06-12T01:02:54.799+0000] {skipmixin.py:178} INFO - Following branch download_data_1_and_2
+[2025-06-12T01:02:54.803+0000] {skipmixin.py:244} INFO - Skipping tasks [('download_data_1', -1)]
+[2025-06-12T01:02:54.814+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=dynamic_training_pipeline, task_id=branching_logic, execution_date=20250612T010252, start_date=20250612T010254, end_date=20250612T010254
+[2025-06-12T01:02:54.856+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-12T01:02:54.868+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

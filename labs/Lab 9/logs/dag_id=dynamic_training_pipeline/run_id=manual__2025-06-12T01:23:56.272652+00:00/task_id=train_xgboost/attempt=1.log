@@ -1,0 +1,24 @@
+[2025-06-12T01:24:04.541+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dynamic_training_pipeline.train_xgboost manual__2025-06-12T01:23:56.272652+00:00 [queued]>
+[2025-06-12T01:24:04.544+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dynamic_training_pipeline.train_xgboost manual__2025-06-12T01:23:56.272652+00:00 [queued]>
+[2025-06-12T01:24:04.544+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-12T01:24:04.550+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): train_xgboost> on 2025-06-12 01:23:56.272652+00:00
+[2025-06-12T01:24:04.553+0000] {standard_task_runner.py:60} INFO - Started process 341 to run task
+[2025-06-12T01:24:04.557+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dynamic_training_pipeline', 'train_xgboost', 'manual__2025-06-12T01:23:56.272652+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/dag_dynamic.py', '--cfg-path', '/tmp/tmpamlpxe7h']
+[2025-06-12T01:24:04.560+0000] {standard_task_runner.py:88} INFO - Job 105: Subtask train_xgboost
+[2025-06-12T01:24:04.590+0000] {task_command.py:423} INFO - Running <TaskInstance: dynamic_training_pipeline.train_xgboost manual__2025-06-12T01:23:56.272652+00:00 [running]> on host bb19b174d1ef
+[2025-06-12T01:24:04.621+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dynamic_training_pipeline' AIRFLOW_CTX_TASK_ID='train_xgboost' AIRFLOW_CTX_EXECUTION_DATE='2025-06-12T01:23:56.272652+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-12T01:23:56.272652+00:00'
+[2025-06-12T01:24:04.621+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/hiring_dynamic_functions.py", line 112, in train_model
+    raise FileNotFoundError(f"train.html no encontrado en: {train_html}")
+FileNotFoundError: train.html no encontrado en: /opt/***/dags/2025-06-12/splits/train.html
+[2025-06-12T01:24:04.624+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=dynamic_training_pipeline, task_id=train_xgboost, execution_date=20250612T012356, start_date=20250612T012404, end_date=20250612T012404
+[2025-06-12T01:24:04.628+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 105 for task train_xgboost (train.html no encontrado en: /opt/***/dags/2025-06-12/splits/train.html; 341)
+[2025-06-12T01:24:04.653+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2025-06-12T01:24:04.664+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
