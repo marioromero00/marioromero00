@@ -1,3 +1,3 @@
-Proyecto para emular los sonidos de animales
+# Labs y Proyectos
 
-![Screenshot](https://www.todopapas.com/img/cuentos/1/3/2/2/1322.jpg)
+Este repositorio contiene los laboratorios y proyectos desarrollados.
