@@ -1,0 +1,6 @@
+artifact_location: file:///Users/marioromero/Library/Mobile%20Documents/com~apple~CloudDocs/Universidad%202025/Laboratorio%20de%20Programacion%20Cientifica/labs/lab8/mlruns/945791199175852072
+creation_time: 1749088031502
+experiment_id: '945791199175852072'
+last_update_time: 1749088031502
+lifecycle_stage: active
+name: Optuna_XGBoost_Optimization

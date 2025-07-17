@@ -1,0 +1,19 @@
+[2025-06-11T03:26:14.817+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hiring_lineal.interfaz_gradio manual__2025-06-11T03:26:06.264119+00:00 [queued]>
+[2025-06-11T03:26:14.819+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hiring_lineal.interfaz_gradio manual__2025-06-11T03:26:06.264119+00:00 [queued]>
+[2025-06-11T03:26:14.819+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-11T03:26:14.823+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): interfaz_gradio> on 2025-06-11 03:26:06.264119+00:00
+[2025-06-11T03:26:14.826+0000] {standard_task_runner.py:60} INFO - Started process 285 to run task
+[2025-06-11T03:26:14.828+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hiring_lineal', 'interfaz_gradio', 'manual__2025-06-11T03:26:06.264119+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/dag_lineal.py', '--cfg-path', '/tmp/tmpfsz7b6hb']
+[2025-06-11T03:26:14.828+0000] {standard_task_runner.py:88} INFO - Job 59: Subtask interfaz_gradio
+[2025-06-11T03:26:14.844+0000] {task_command.py:423} INFO - Running <TaskInstance: hiring_lineal.interfaz_gradio manual__2025-06-11T03:26:06.264119+00:00 [running]> on host 21d6b203bade
+[2025-06-11T03:26:14.867+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hiring_lineal' AIRFLOW_CTX_TASK_ID='interfaz_gradio' AIRFLOW_CTX_EXECUTION_DATE='2025-06-11T03:26:06.264119+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-11T03:26:06.264119+00:00'
+[2025-06-11T03:26:15.048+0000] {logging_mixin.py:188} INFO - Running on local URL:  http://0.0.0.0:7860
+[2025-06-11T03:26:15.919+0000] {logging_mixin.py:188} INFO - IMPORTANT: You are using gradio version 3.50.2, however version 4.44.1 is available, please upgrade.
+[2025-06-11T03:26:15.920+0000] {logging_mixin.py:188} INFO - --------
+[2025-06-11T03:26:16.266+0000] {logging_mixin.py:188} INFO - 
+To create a public link, set `share=True` in `launch()`.
+[2025-06-11T06:56:36.127+0000] {local_task_job_runner.py:302} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2025-06-11T06:56:36.148+0000] {process_utils.py:131} INFO - Sending 15 to group 285. PIDs of all processes in the group: [285]
+[2025-06-11T06:56:36.148+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 285
+[2025-06-11T06:56:36.152+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-06-11T06:56:36.255+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=285, status='terminated', exitcode=0, started='03:26:14') (285) terminated with exit code 0

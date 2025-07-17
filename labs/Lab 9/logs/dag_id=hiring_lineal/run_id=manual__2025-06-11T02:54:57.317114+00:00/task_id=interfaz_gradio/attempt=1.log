@@ -1,0 +1,46 @@
+[2025-06-11T02:55:05.469+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hiring_lineal.interfaz_gradio manual__2025-06-11T02:54:57.317114+00:00 [queued]>
+[2025-06-11T02:55:05.471+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hiring_lineal.interfaz_gradio manual__2025-06-11T02:54:57.317114+00:00 [queued]>
+[2025-06-11T02:55:05.471+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-11T02:55:05.475+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): interfaz_gradio> on 2025-06-11 02:54:57.317114+00:00
+[2025-06-11T02:55:05.480+0000] {standard_task_runner.py:60} INFO - Started process 301 to run task
+[2025-06-11T02:55:05.482+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hiring_lineal', 'interfaz_gradio', 'manual__2025-06-11T02:54:57.317114+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/dag_lineal.py', '--cfg-path', '/tmp/tmpyhlay65e']
+[2025-06-11T02:55:05.482+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask interfaz_gradio
+[2025-06-11T02:55:05.498+0000] {task_command.py:423} INFO - Running <TaskInstance: hiring_lineal.interfaz_gradio manual__2025-06-11T02:54:57.317114+00:00 [running]> on host 0e3c31cfe420
+[2025-06-11T02:55:05.520+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hiring_lineal' AIRFLOW_CTX_TASK_ID='interfaz_gradio' AIRFLOW_CTX_EXECUTION_DATE='2025-06-11T02:54:57.317114+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-11T02:54:57.317114+00:00'
+[2025-06-11T02:55:05.712+0000] {logging_mixin.py:188} INFO - Running on local URL:  http://127.0.0.1:7860
+[2025-06-11T02:55:06.809+0000] {logging_mixin.py:188} INFO - IMPORTANT: You are using gradio version 3.50.2, however version 4.44.1 is available, please upgrade.
+[2025-06-11T02:55:06.810+0000] {logging_mixin.py:188} INFO - --------
+[2025-06-11T02:55:16.281+0000] {logging_mixin.py:188} INFO - 
+Could not create share link. Missing file: /home/***/.local/lib/python3.10/site-packages/gradio/frpc_linux_aarch64_v0.2. 
+
+Please check your internet connection. This can happen if your antivirus software blocks the download of this file. You can install manually by following these steps: 
+
+1. Download this file: https://cdn-media.huggingface.co/frpc-gradio-0.2/frpc_linux_aarch64
+2. Rename the downloaded file to: frpc_linux_aarch64_v0.2
+3. Move the file to this location: /home/***/.local/lib/python3.10/site-packages/gradio
+[2025-06-11T03:03:02.632+0000] {local_task_job_runner.py:121} ERROR - Received SIGTERM. Terminating subprocesses
+[2025-06-11T03:03:02.668+0000] {process_utils.py:131} INFO - Sending 15 to group 301. PIDs of all processes in the group: [301]
+[2025-06-11T03:03:02.671+0000] {process_utils.py:86} INFO - Sending the signal 15 to group 301
+[2025-06-11T03:03:02.673+0000] {taskinstance.py:2450} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-06-11T03:03:02.712+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/hiring_functions.py", line 98, in gradio_interface
+    gr.Interface(
+  File "/home/airflow/.local/lib/python3.10/site-packages/gradio/blocks.py", line 2266, in launch
+    self.block_thread()
+  File "/home/airflow/.local/lib/python3.10/site-packages/gradio/blocks.py", line 2361, in block_thread
+    time.sleep(0.1)
+  File "/home/airflow/.local/lib/python3.10/site-packages/airflow/models/taskinstance.py", line 2452, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-06-11T03:03:02.724+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=hiring_lineal, task_id=interfaz_gradio, execution_date=20250611T025457, start_date=20250611T025505, end_date=20250611T030302
+[2025-06-11T03:03:02.739+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 18 for task interfaz_gradio (Task received SIGTERM signal; 301)
+[2025-06-11T03:03:02.779+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=301, status='terminated', exitcode=1, started='02:55:05') (301) terminated with exit code 1
+[2025-06-11T03:03:02.779+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 143
+[2025-06-11T03:03:02.799+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

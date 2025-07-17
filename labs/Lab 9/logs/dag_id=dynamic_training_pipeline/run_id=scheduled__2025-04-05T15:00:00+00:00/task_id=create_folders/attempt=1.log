@@ -1,0 +1,26 @@
+[2025-06-12T00:56:46.014+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dynamic_training_pipeline.create_folders scheduled__2025-04-05T15:00:00+00:00 [queued]>
+[2025-06-12T00:56:46.018+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dynamic_training_pipeline.create_folders scheduled__2025-04-05T15:00:00+00:00 [queued]>
+[2025-06-12T00:56:46.018+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-12T00:56:46.024+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): create_folders> on 2025-04-05 15:00:00+00:00
+[2025-06-12T00:56:46.030+0000] {standard_task_runner.py:60} INFO - Started process 311 to run task
+[2025-06-12T00:56:46.031+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dynamic_training_pipeline', 'create_folders', 'scheduled__2025-04-05T15:00:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/dag_dynamic.py', '--cfg-path', '/tmp/tmp5wqp2y_d']
+[2025-06-12T00:56:46.033+0000] {standard_task_runner.py:88} INFO - Job 67: Subtask create_folders
+[2025-06-12T00:56:46.060+0000] {task_command.py:423} INFO - Running <TaskInstance: dynamic_training_pipeline.create_folders scheduled__2025-04-05T15:00:00+00:00 [running]> on host 5b1df1b482e5
+[2025-06-12T00:56:46.087+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dynamic_training_pipeline' AIRFLOW_CTX_TASK_ID='create_folders' AIRFLOW_CTX_EXECUTION_DATE='2025-04-05T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-05T15:00:00+00:00'
+[2025-06-12T00:56:46.088+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-12T00:56:46.091+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=dynamic_training_pipeline, task_id=create_folders, execution_date=20250405T150000, start_date=20250612T005646, end_date=20250612T005646
+[2025-06-12T00:56:46.131+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-12T00:56:46.144+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-06-12T01:45:39.789+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dynamic_training_pipeline.create_folders scheduled__2025-04-05T15:00:00+00:00 [queued]>
+[2025-06-12T01:45:39.792+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dynamic_training_pipeline.create_folders scheduled__2025-04-05T15:00:00+00:00 [queued]>
+[2025-06-12T01:45:39.792+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2025-06-12T01:45:39.799+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): create_folders> on 2025-04-05 15:00:00+00:00
+[2025-06-12T01:45:39.802+0000] {standard_task_runner.py:60} INFO - Started process 311 to run task
+[2025-06-12T01:45:39.803+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'dynamic_training_pipeline', 'create_folders', 'scheduled__2025-04-05T15:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dag_dynamic.py', '--cfg-path', '/tmp/tmp4u92hsz5']
+[2025-06-12T01:45:39.805+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask create_folders
+[2025-06-12T01:45:39.838+0000] {task_command.py:423} INFO - Running <TaskInstance: dynamic_training_pipeline.create_folders scheduled__2025-04-05T15:00:00+00:00 [running]> on host caffbd336f08
+[2025-06-12T01:45:39.863+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dynamic_training_pipeline' AIRFLOW_CTX_TASK_ID='create_folders' AIRFLOW_CTX_EXECUTION_DATE='2025-04-05T15:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-05T15:00:00+00:00'
+[2025-06-12T01:45:39.864+0000] {python.py:201} INFO - Done. Returned value was: None
+[2025-06-12T01:45:39.867+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=dynamic_training_pipeline, task_id=create_folders, execution_date=20250405T150000, start_date=20250612T014539, end_date=20250612T014539
+[2025-06-12T01:45:39.901+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-12T01:45:39.915+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

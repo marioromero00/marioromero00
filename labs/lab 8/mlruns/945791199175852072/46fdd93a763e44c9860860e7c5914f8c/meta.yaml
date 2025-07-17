@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/marioromero/Library/Mobile%20Documents/com~apple~CloudDocs/Universidad%202025/Laboratorio%20de%20Programacion%20Cientifica/labs/lab8/mlruns/945791199175852072/46fdd93a763e44c9860860e7c5914f8c/artifacts
+end_time: 1749091323922
+entry_point_name: ''
+experiment_id: '945791199175852072'
+lifecycle_stage: active
+run_id: 46fdd93a763e44c9860860e7c5914f8c
+run_name: XGBoost con lr 0.101
+run_uuid: 46fdd93a763e44c9860860e7c5914f8c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1749091323872
+status: 3
+tags: []
+user_id: marioromero

@@ -1,0 +1,13 @@
+[2025-06-11T03:18:09.812+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: hiring_lineal.descargar_dataset manual__2025-06-11T03:18:04.954163+00:00 [queued]>
+[2025-06-11T03:18:09.814+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: hiring_lineal.descargar_dataset manual__2025-06-11T03:18:04.954163+00:00 [queued]>
+[2025-06-11T03:18:09.814+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2025-06-11T03:18:09.818+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): descargar_dataset> on 2025-06-11 03:18:04.954163+00:00
+[2025-06-11T03:18:09.822+0000] {standard_task_runner.py:60} INFO - Started process 243 to run task
+[2025-06-11T03:18:09.824+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'hiring_lineal', 'descargar_dataset', 'manual__2025-06-11T03:18:04.954163+00:00', '--job-id', '44', '--raw', '--subdir', 'DAGS_FOLDER/dag_lineal.py', '--cfg-path', '/tmp/tmp4z8t4dvv']
+[2025-06-11T03:18:09.824+0000] {standard_task_runner.py:88} INFO - Job 44: Subtask descargar_dataset
+[2025-06-11T03:18:09.840+0000] {task_command.py:423} INFO - Running <TaskInstance: hiring_lineal.descargar_dataset manual__2025-06-11T03:18:04.954163+00:00 [running]> on host f82115a9cc3e
+[2025-06-11T03:18:09.863+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='hiring_lineal' AIRFLOW_CTX_TASK_ID='descargar_dataset' AIRFLOW_CTX_EXECUTION_DATE='2025-06-11T03:18:04.954163+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-06-11T03:18:04.954163+00:00'
+[2025-06-11T03:18:10.435+0000] {python.py:201} INFO - Done. Returned value was: 0
+[2025-06-11T03:18:10.455+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=hiring_lineal, task_id=descargar_dataset, execution_date=20250611T031804, start_date=20250611T031809, end_date=20250611T031810
+[2025-06-11T03:18:10.471+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2025-06-11T03:18:10.489+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
