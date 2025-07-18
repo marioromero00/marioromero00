@@ -1,0 +1,68 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+  airflow-webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__SECRET_KEY: "some_random_key"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/scripts:/opt/airflow/scripts
+      - ./airflow/output:/opt/airflow/output
+      - ./data:/opt/airflow/data
+      - ./airflow/mlruns:/mlflow/mlruns         # ✅ AÑADIDO
+    ports:
+      - "8081:8080"
+    command: webserver
+
+  airflow-scheduler:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__SECRET_KEY: "some_random_key"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/scripts:/opt/airflow/scripts
+      - ./airflow/output:/opt/airflow/output
+      - ./data:/opt/airflow/data
+      - ./airflow/mlruns:/mlflow/mlruns         # ✅ AÑADIDO
+    command: scheduler
+
+  mlflow-server:
+    image: ghcr.io/mlflow/mlflow:v2.13.0
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./airflow/mlruns:/mlflow/mlruns
+    command: >
+      mlflow server
+        --backend-store-uri sqlite:///mlflow.db
+        --default-artifact-root file:/mlflow/mlruns
+        --host 0.0.0.0
+        --port 5000
+
+volumes:
+  postgres-db-volume:
